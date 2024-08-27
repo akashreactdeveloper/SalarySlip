@@ -7,7 +7,7 @@ const cors = require('cors');
 const fsExtra = require('fs-extra');
 
 const app = express();
-const allowedOrigins = ['http://localhost:3000','http://localhost:5173'];
+const allowedOrigins = ['http://localhost:3000','http://localhost:5173','https://darling-heliotrope-8dc8b6.netlify.app'];
 
 app.use(cors({
     origin: function (origin, callback) {
