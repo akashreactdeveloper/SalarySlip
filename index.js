@@ -7,8 +7,18 @@ const cors = require('cors');
 const fsExtra = require('fs-extra');
 
 const app = express();
+const allowedOrigins = ['http://localhost:3000','http://localhost:5173'];
 
-app.use(cors());
+app.use(cors({
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+            return callback(null, true);
+        }
+        const msg = 'The CORS policy does not allow access from the specified Origin.';
+        return callback(new Error(msg), false);
+    },
+    credentials: true // Allow credentials (cookies) to be sent
+}));
 
 // Static folder for serving the HTML form
 app.use(express.static(path.join(__dirname, 'public')));
