@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb+srv://akashnew:%40Klaus247@cluster0.4nbcv.mongodb.net/Salary?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://akashforgaming7:564@salary-cluster.bvdyk9n.mongodb.net/Salary?retryWrites=true&w=majority", {
     serverSelectionTimeoutMS: 5000, // Example: Set timeout to 5 seconds
     socketTimeoutMS: 45000, // Example: Set socket timeout to 45 seconds
 })
